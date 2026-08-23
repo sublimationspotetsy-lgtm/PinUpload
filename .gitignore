@@ -1,0 +1,21 @@
+# Secrets — never commit real keys
+.env
+.env.local
+
+# Virtualenv + bytecode
+.venv/
+__pycache__/
+*.pyc
+
+# macOS noise
+.DS_Store
+
+# Scratch/audit scripts (transient)
+_*.py
+
+# Agent tooling (not part of the project)
+.agents/
+.claude/
+
+# Generated images + per-slug Codex artifacts (regenerable, not stored in repo)
+images/

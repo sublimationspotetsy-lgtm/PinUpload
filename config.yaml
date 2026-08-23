@@ -1,0 +1,45 @@
+# Pinterest Affiliate Pin Generator — Configuration
+
+pins_per_keyword: 10
+
+# VERIFIED against https://ai.google.dev/gemini-api/docs/models (2026-08-14).
+# "gemini-3.6-flash" is a confirmed stable model ID (current-gen Flash, used
+# as the docs' canonical "Stable" example). Switch to "gemini-3.7-flash" only
+# if you want the newest Flash instead. No unverified strings remain.
+gemini_model: "gemini-3.6-flash"
+gemini_temperature: 0.9
+
+amazon_domain: "www.amazon.com"
+
+image_width: 1000
+image_height: 1500
+
+# Replace USER and REPO with your actual GitHub username and repository name.
+# Tab 2's "Sync to GitHub" and Tab 3's CSV link-verification both depend on
+# this being correct. The app will warn on startup if this still contains
+# the placeholder strings "USER" or "REPO".
+image_base_url: "https://raw.githubusercontent.com/sublimationspotetsy-lgtm/PinUpload/main/images"
+
+# These 6 board names must exactly match what is set up on Pinterest.
+# Typos here will silently create duplicate boards on Pinterest — do not
+# edit these strings without simultaneously updating your Pinterest account.
+# Validation: the app hard-errors at startup if this list deviates from
+# these exact 6 entries.
+boards:
+  - "Occasion Outfits | Date Night, Work & Glam"
+  - "Poetcore & Glamoratti Outfit Ideas"
+  - "Seasonal Outfit Ideas | Spring, Summer, Fall & Winter"
+  - "Shop the Look | Amazon & SHEIN Fashion"
+  - "Petite & Curvy Outfit Ideas by Body Type"
+  - "Sport-Luxe & Athleisure Outfit Ideas"
+
+default_board: "Shop the Look | Amazon & SHEIN Fashion"
+
+# Scheduling (Tab 3)
+schedule_interval_minutes: 60
+# schedule_start: null means "continue from last recorded slot in
+# state/schedule_state.json, or start from now if that file is absent".
+schedule_start: null
+
+# Pinterest bulk CSV max rows per file
+max_pins_per_csv: 200
