@@ -1,23 +1,12 @@
-# Secrets — never commit real keys
-.env
-.env.local
+# This repo is an IMAGE HOST only (raw.githubusercontent.com serves images/).
+# No app source is published. Everything not explicitly allowed below is ignored.
 
-# Virtualenv + bytecode
-.venv/
-__pycache__/
-*.pyc
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/images
 
-# macOS noise
+# Inside images/: keep the flat pin PNGs, ignore per-slug artifacts
+/images/*/
 .DS_Store
-
-# Scratch/audit scripts (transient)
-_*.py
-
-# Agent tooling (not part of the project)
-.agents/
-.claude/
-
-# Per-slug Codex artifacts (regenerable, not stored in repo).
-# Flat images/<filename>.png ARE tracked: config.yaml image_base_url serves them
-# via raw.githubusercontent.com, which Tab 3's CSV Media URL column requires.
-images/*/
