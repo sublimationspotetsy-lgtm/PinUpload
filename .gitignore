@@ -17,5 +17,7 @@ _*.py
 .agents/
 .claude/
 
-# Generated images + per-slug Codex artifacts (regenerable, not stored in repo)
-images/
+# Per-slug Codex artifacts (regenerable, not stored in repo).
+# Flat images/<filename>.png ARE tracked: config.yaml image_base_url serves them
+# via raw.githubusercontent.com, which Tab 3's CSV Media URL column requires.
+images/*/
