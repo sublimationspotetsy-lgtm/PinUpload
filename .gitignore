@@ -7,6 +7,8 @@
 !/LICENSE
 !/images
 
-# Inside images/: keep the flat pin PNGs, ignore per-slug artifacts
+# Inside images/: keep the flat pin PNGs + the _archive/ subtree, ignore
+# per-slug artifacts
 /images/*/
+!/images/_archive
 .DS_Store
