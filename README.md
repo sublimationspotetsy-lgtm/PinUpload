@@ -52,6 +52,22 @@ on every tab.
 3. Click **Generate Pins** → writes `pins/<slug>.json`, `pins/<slug>.md`,
    prompts manifest, and initializes `state/pipeline_status.json`.
 
+Keyword frontmatter supports:
+- `board:` — explicit human choice, always wins over Gemini's suggestion
+- `notes:` — extra context passed to Gemini
+- `Items:` — up to 4 curated Amazon products, slash-separated. When present,
+  every pin's Amazon link targets exactly ONE of these items (rotated across
+  pins); without it Gemini picks its own detailed single-item search terms.
+
+Example:
+```yaml
+---
+keyword: fall outfit inspo 2026 for women
+notes: easy elegance/rich textures/transitional layering
+Items: wine-red ribbed wrap midi dress/deep emerald green velvet suit/oversized camel sweater vest
+---
+```
+
 ### Tab 2 — Prepare Images
 1. Generate/save the images into `images/` using the filenames from the pins JSON.
 2. Click **Re-write manifest** if needed, then follow the git commands shown
